@@ -13,7 +13,8 @@
   font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   color: #fffcfc;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 300;
 }
 .navigation__link--active {
   color: #F8F800;

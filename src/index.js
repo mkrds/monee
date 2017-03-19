@@ -12,7 +12,6 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      {/* <Route path="/addcost" component={AddCost} /> */}
       <Route path="/addcost/:type" component={AddCost} />
       <Route path="/stats" component={Stats} />
       <Route path="/account" component={Account} />

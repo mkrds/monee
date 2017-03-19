@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
-// import './AddCost.css'
+import './AddCost.css'
 
 class AddCost extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      costType: this.props.params.type,
+      value: '',
+      date: '',
+      description: ''
+    }
+  }
+
+  handleClick() {
+
+  }
   render() {
     return (
-      <section className='AddCost'>
+      <section className='addCost'>
         <h1>
-          {this.props.params.type}
+          {this.state.costType}
         </h1>
       </section>
     )

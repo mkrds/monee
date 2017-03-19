@@ -20,12 +20,10 @@
   width: 33%;
   display: flex;
   align-items: center;
-  height: 10vh;
+  height: 120px;
 }
-.cost__element i {
-  font-weight: 300;
-  color: #fffcfc;
-  font-size: 50px;
-  /*text-shadow: 3px 3px 0 #111, 4px 4px 0 #F8F800;*/
-  width: 33%;
+.cost__element img {
+  filter: invert();
+  height: 60px;
+  margin: 30px;
 }

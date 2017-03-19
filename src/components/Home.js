@@ -1,22 +1,38 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import bills from '../images/009-internet.png'
+import health from '../images/010-medical.png'
+import transport from '../images/013-transport.png'
+import vacation from '../images/003-summer.png'
+import sport from '../images/001-gym.png'
+import groceries from '../images/007-food-1.png'
+import leisure from '../images/004-drink.png'
+import clothes from '../images/012-christmas.png'
+import savings from '../images/006-money.png'
+import takeaway from '../images/005-food.png'
+import electronics from '../images/011-technology.png'
+import other from '../images/008-round.png'
 import './Home.css'
 
 class Home extends Component {
   render() {
     const costTypes = [
-      { text: 'health', icon: 'fa fa-heart' },
-      { text: 'bills', icon: 'fa fa-home' },
-      { text: 'gas', icon: 'fa fa-car' },
-      { text: 'vacation', icon: 'fa fa-plane' },
-      { text: 'lunch', icon: 'fa fa-coffee' },
-      { text: 'groceries', icon: 'fa fa-shopping-cart' },
-      { text: 'leisure', icon: 'fa fa-glass' },
-      { text: 'Leisure', icon: 'fa fa-glass' },
+      { text: 'bills', icon: bills },
+      { text: 'health', icon: health },
+      { text: 'transport', icon: transport },
+      { text: 'vacation', icon: vacation },
+      { text: 'sport', icon: sport },
+      { text: 'groceries', icon: groceries },
+      { text: 'leisure', icon: leisure },
+      { text: 'clothes', icon: clothes },
+      { text: 'savings', icon: savings },
+      { text: 'takeaway', icon: takeaway },
+      { text: 'electonics', icon: electronics },
+      { text: 'other', icon: other },
     ]
     const listItems = costTypes.map((type, i) => (
       <Link key={i} className='cost__element' to={'/addcost/'+ type.text}>
-        <i className={type.icon} aria-hidden="true"></i>
+        <img src={type.icon} alt={type.text + ' icon'} />
         <h1>{type.text}</h1>
       </Link>
     ))
