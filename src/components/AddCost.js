@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import request from 'superagent'
 import SingleInput from './SingleInput'
 import TextArea from './TextArea'
 
@@ -28,14 +29,14 @@ class AddCost extends Component {
       currentDay: ''
     }
   }
-  componentDidMount () {
+  componentWillMount () {
     const currentDate = new Date()
     const currentYear = currentDate.getFullYear()
     const currentMonth = currentDate.getMonth() + 1
     const currentDay = currentDate.getDate()
     this.setState ({ currentYear })
-    this.setState ({ currentMonth})
-    this.setState ({ currentDay})
+    this.setState ({ currentMonth })
+    this.setState ({ currentDay })
   }
   handleAmountChange = e => {
     this.setState({ value: e.target.value })
@@ -76,8 +77,22 @@ class AddCost extends Component {
       console.log('Wrong value');
     }
     if (validationIndex === 0) {
-      // post request
-      console.log("Post done");
+      const formPayload = {
+        "users": {
+          "lel": {
+            "costType": this.state.costType,
+            "year": this.state.currentYear.toString(),
+            "month": this.state.currentMonth.toString(),
+            "day": this.state.currentDay.toString(),
+            "value": this.state.value,
+            "description": this.state.description,
+          }
+        }
+      }
+      const apiUrl = 'https://monee-86652.firebaseio.com/.json'
+      request.post(apiUrl)
+        .send(formPayload)
+        .end(console.log('Post done'))
     }
   }
 
@@ -138,9 +153,9 @@ class AddCost extends Component {
             controlFunc={this.handleDescriptionChange}
             placeholder={'Write cost description here'} />
           <input
-            type="submit"
-            className=""
-            value="Submit"/>
+            type='submit'
+            className=''
+            value='Submit'/>
         </form>
       </section>
     )
