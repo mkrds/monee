@@ -7,8 +7,9 @@
   align-items:center;
 }
 .stats h1 {
+  width: 100%;
   font-family: 'Roboto Mono', monospace;
-  font-size: 50px;
+  font-size: 15px;
   color: #fffcfc;
   font-weight: 300;
 }

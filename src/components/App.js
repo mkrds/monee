@@ -1,20 +1,18 @@
-import React, { Component } from 'react'
-import './App.css'
+import React from 'react'
 import Header from './Header'
+import '../css/App.css'
 
 // import ParticlesBackground from './ParticlesBackground'
 
-class App extends Component {
-  render() {
-    return (
-      <div className='App'>
-          <Header />
-          <div className="content">
-            {this.props.children}
-          </div>
-      </div>
-    )
-  }
+const App = (props) => {
+  return (
+    <div className='App'>
+        <Header />
+        <div className="content">
+          {props.children}
+        </div>
+    </div>
+  )
 }
 
 export default App

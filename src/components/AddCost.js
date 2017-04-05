@@ -15,7 +15,7 @@ import savings from '../images/006-money.png'
 import vacation from '../images/003-summer.png'
 import electronics from '../images/011-technology.png'
 import other from '../images/008-round.png'
-import './AddCost.css'
+import '../css/AddCost.css'
 
 class AddCost extends Component {
   constructor(props) {
@@ -78,18 +78,14 @@ class AddCost extends Component {
     }
     if (validationIndex === 0) {
       const formPayload = {
-        "users": {
-          "lel": {
-            "costType": this.state.costType,
-            "year": this.state.currentYear.toString(),
-            "month": this.state.currentMonth.toString(),
-            "day": this.state.currentDay.toString(),
-            "value": this.state.value,
-            "description": this.state.description,
-          }
-        }
+        "costType": this.state.costType,
+        "year": this.state.currentYear.toString(),
+        "month": this.state.currentMonth.toString(),
+        "day": this.state.currentDay.toString(),
+        "value": this.state.value,
+        "description": this.state.description,
       }
-      const apiUrl = 'https://monee-86652.firebaseio.com/.json'
+      const apiUrl = 'https://monee-86652.firebaseio.com/' + formPayload.year + '/' + formPayload.month + '/' + formPayload.day + '/.json'
       request.post(apiUrl)
         .send(formPayload)
         .end(console.log('Post done'))

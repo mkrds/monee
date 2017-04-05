@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import './Account.css'
+import '../css/Account.css'
 
 class Account extends Component {
   render() {
     return (
       <section className='account'>
         <h1>
-          account
+          Placeholder for future account management when authentication will be ready.
         </h1>
       </section>
     )

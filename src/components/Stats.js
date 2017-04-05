@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import request from 'superagent'
-import './Stats.css'
+import EntriesList from './EntriesList'
+import '../css/Stats.css'
 
 class Stats extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      allStats: ''
+      allEntries: []
     }
   }
   // componentDidMount() {
@@ -19,10 +20,7 @@ class Stats extends Component {
           console.log('Error')
         } else {
           console.log('GET done')
-          // const allStats = JSON.stringify(result.body)
-          const allStats = result.body
-          console.log(allStats);
-          this.setState({ allStats })
+          this.setState({ allEntries: result.body })
         }
       })
   }
@@ -30,9 +28,7 @@ class Stats extends Component {
   render() {
     return (
       <section className='stats'>
-        <h1>
-          {JSON.stringify(this.state.allStats)}
-        </h1>
+        <EntriesList data={this.state.allEntries} />
       </section>
     )
   }

@@ -1,9 +1,9 @@
 import React from 'react'
 import logo from '../images/moneeCoin.png'
 import Navigation from './Navigation'
-import './Header.css'
+import '../css/Header.css'
 
-const Header = (props) => {
+const Header = () => {
   return (
     <header className='header'>
       <div className='logo'>
