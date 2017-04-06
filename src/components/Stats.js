@@ -11,7 +11,7 @@ class Stats extends Component {
     }
   }
   // componentDidMount() {
-  componentWillMount() {
+  componentDidMount() {
     const apiUrl = 'https://monee-86652.firebaseio.com/.json'
     request
       .get(apiUrl)

@@ -26,7 +26,7 @@ const Home = () =>  {
     { text: 'clothes', icon: clothes },
     { text: 'savings', icon: savings },
     { text: 'vacation', icon: vacation },
-    { text: 'electonics', icon: electronics },
+    { text: 'electronics', icon: electronics },
     { text: 'other', icon: other },
   ]
   const listItems = costTypes.map((type, i) => (
