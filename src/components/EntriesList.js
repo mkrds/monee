@@ -29,7 +29,7 @@ class EntriesList extends Component {
       return {allEntriesArray: state.allEntriesArray}
     })
   }
-
+  // methods below are separated since i'd like to map the object by year, month or day so only data from specific date would be displayed
   entriesObjectToArrayDay = (array, o, year, month, day) => {
     Object.keys(o[year][month][day]).map((element) => {
       return array.push({
